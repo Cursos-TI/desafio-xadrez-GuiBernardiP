@@ -33,7 +33,7 @@ int main() {
     printf("\nMovimentando a Torre!\n");
     for (int i = 0; i < 5; i++)
     {
-        printf("Torre para direita\n"); //Imprime a direção do movimento
+        printf("Direita\n"); //Imprime a direção do movimento
     }
 
     printf("\nMovimentando a Rainha!\n");
@@ -41,7 +41,7 @@ int main() {
     // mover rainha 8 casas para esquerda
     while (esquerda <= 8)
     {
-        printf("Rainha para esquerda\n");
+        printf("Esquerda\n");
         esquerda++;
     }
     
@@ -50,11 +50,23 @@ int main() {
     // Mover bispo 5 casas a diagonal para cima a direita
     do 
     {
-        printf("Bispo para direita, cima\n");
+        printf("Direita, Cima\n");
         
         diagonal++;
 
     } while (diagonal <= 8);
+    
+    //Mover cavalo 2 casas para cima e 1 oara direita
+    int cavalo = 1; // movimento em L do cavalo
+
+    while (cavalo --)
+    {   printf("\nMovimentando o Cavalo!\n");
+        for (int i = 0; i < 2; i++)
+        {
+            printf("Cima\n");// imprime "Cima" duas vezes
+        }
+        printf("Direita"); // Imprime "direita" uma vez
+    }
 
     return 0;
 }
