@@ -30,43 +30,60 @@ int main() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Mover a torre 5 casas para direita
-    printf("\nMovimentando a Torre!\n");
+#include <stdio.h>
+
+ // torre, bispo e rainha
+void movimentacaoTorre(){
     for (int i = 0; i < 5; i++)
     {
-        printf("Direita\n"); //Imprime a direção do movimento
+        printf("Torre para direita\n"); //Imprime a direção do movimento
     }
+}
+void movimentacaoBispo(){
+    
+    int vertical = 1;
+    // Mover bispo 5 casas a diagonal para cima a direita
+    do
+    {
+        int horizontal = 1;
+        do
+        {
+            printf("Bispo para direita!\n");
+            horizontal++;
+        } while (horizontal <= 1);
+        
+        printf("Bispo para cima!\n");
+        vertical++;        
+    } while (vertical <= 5);
 
-    printf("\nMovimentando a Rainha!\n");
+}
+void movimentacaoRainha(){
     int esquerda = 1;
     // mover rainha 8 casas para esquerda
     while (esquerda <= 8)
     {
-        printf("Esquerda\n");
+        printf("Rainha para esquerda\n");
         esquerda++;
     }
+}
     
-    printf("\nMovimentando o Bispo!\n");
-    int diagonal = 1;
-    // Mover bispo 5 casas a diagonal para cima a direita
-    do 
+
+    // Torre, rainha e bispo com suas funçoes recursivas
+    printf("Movimentando Torre!\n");
+    movimentacaoTorre();
+
+    printf("\nMovimentando Bispo!\n"); //loops aninhados, loop externo o vertical, e interno o horizontal.
+    movimentacaoBispo();
+
+    printf("\nMovimentando Rainha!\n");
+    movimentacaoRainha();
+
+    // movimentação do cavalo com loop aninhado e multiplas variaveis!
+    printf("\nMovimentando Cavalo!\n");
+    for (int cima = 0, direita = 0; cima <= 2 && direita <= 1; cima++, direita++)
     {
-        printf("Direita, Cima\n");
-        
-        diagonal++;
-
-    } while (diagonal <= 8);
-    
-    //Mover cavalo 2 casas para cima e 1 oara direita
-    int cavalo = 1; // movimento em L do cavalo
-
-    while (cavalo --)
-    {   printf("\nMovimentando o Cavalo!\n");
-        for (int i = 0; i < 2; i++)
-        {
-            printf("Cima\n");// imprime "Cima" duas vezes
-        }
-        printf("Direita"); // Imprime "direita" uma vez
-    }
-
+        printf("Cima\n");
+    }                       // não consegui desenvolver essa parte direito
+    printf("Direita\n");
     return 0;
 }
